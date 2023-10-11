@@ -1,0 +1,154 @@
+html,
+body {
+    width: 650px;
+    height: 550px;
+    background-color: rgba(255, 255, 255, 1);
+    margin: 0;
+    overflow: hidden;
+}
+
+header {
+    box-shadow: 0px 4px 35px rgb(41 82 144 / 25%);
+    background-color: rgb(210, 210, 210);
+    position: absolute;
+    width: 90%;
+    height: 10%;
+    top: 1%;
+    left: 3%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+section {
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    height: 70%;
+    left: 3%;
+    text-align: center;
+}
+
+article#middle {
+    border-radius: 10px;
+    width: 93%;
+    height: 100%;
+    box-shadow: 0px 4px 35px rgb(41 82 144 / 25%);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+img {
+    border-radius: 50%;
+    width: 15%;
+    height: 90%;
+}
+
+.title {
+    color: black;
+    vertical-align: top;
+    font-size: 32px;
+    text-align: left;
+    font-family: Open Sans;
+    text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+}
+
+span {
+    color: black;
+    vertical-align: top;
+    font-size: 20px;
+    text-align: left;
+    font-family: Open Sans;
+    text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+    margin-left: 1%;
+}
+
+.span2 {
+    position: absolute;
+    top: 2%;
+    left: 6%;
+    color: black;
+    font-size: 28px;
+    font-family: Open Sans;
+    text-shadow: rgb(0 0 0 / 25%) 0px 4px 4px;
+}
+
+#applyBtn {
+    width: 30%;
+    height: 10%;
+    background-color: rgb(75, 72, 72);
+    border: none;
+    color: white;
+}
+
+#applyBtn:active {
+    background-color: rgb(53, 52, 52);
+}
+
+#gname_text {
+    margin-top: 10px;
+    margin-left: 18%;
+    width: 60%;
+    height: 8%;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0px 0px 0.5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.createbtn {
+    position: relative;
+    height: 8%;
+    left: 1.5%;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgb(164, 165, 165);
+    border: none;
+    border-radius: 5px;
+}
+
+.createbtn:active {
+    background: rgb(103, 103, 103);
+}
+
+.input {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+    width: 20%;
+    height: 6.5%;
+    position: absolute;
+    left: 22%;
+    top: 20%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.select {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+    width: 20%;
+    height: 8%;
+    position: absolute;
+    left: 45%;
+    top: 20%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.addbtn {
+    position: relative;
+    width: 10%;
+    top: 3%;
+    height: 8%;
+    left: 27%;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgb(164, 165, 165);
+    border: none;
+    border-radius: 5px;
+}
+
+.addbtn:active {
+    background: rgb(103, 103, 103);
+}
