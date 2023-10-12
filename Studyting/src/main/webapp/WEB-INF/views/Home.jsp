@@ -15,8 +15,8 @@
 
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<c:url value='/resources/css/main_page.css'/>">
-    <script src="<c:url value='/resources/js/main_page.js'/> "></script>
+    <link rel="stylesheet" href="<c:url value='/resources/css/Home.css'/>">
+    <script src="<c:url value='/resources/js/Home.js'/> "></script>
 
 </head>
 
@@ -33,7 +33,7 @@
             </span>
         </span>
         <input class="left_side_bar_item" type="button" id="AddBtn" value="+" onclick="Add_Group()">
-        <iframe src="mypage.html" name="my_frame" id="my_frame"></iframe>
+        <iframe src="/profile" name="my_frame" id="my_frame"></iframe>
     </span>
 </body>
 

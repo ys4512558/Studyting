@@ -1,5 +1,14 @@
-var check1 = "False";
-var check2 = "False";
+
+window.onload = function () {
+    var check1 = "False";
+    var check2 = "False";
+
+    var checkNameBtn = document.getElementById("checkNameBtn");
+    var checkIdBtn = document.getElementById("checkIdBtn");
+
+    checkNameBtn.addEventListener("click", checkName);
+    checkIdBtn.addEventListener("click", checkID);
+}
 
 function createRequest() {
     try {
@@ -19,8 +28,8 @@ function checkID() {
 
     var id = document.getElementById("id").value;
 
-    var qry = "check=" + "check" + "&id=" + id;
-    var url = "checkID.jsp?";
+    var url = "/studyting/register/check-id?";
+    var qry = "id=" + id;
 
     request.open("POST", url, true);
     request.onreadystatechange = IDupdatePage;
@@ -30,6 +39,7 @@ function checkID() {
 function IDupdatePage() {
     if (request.readyState == 4) {
         var check = request.responseText;
+        alert(check);
         if (check.includes("false")) {
             alert("이미 존재하는 아이디 입니다.");
         }
@@ -46,8 +56,8 @@ function checkName() {
 
     var name = document.getElementById("name").value;
 
-    var qry = "check=" + "check" + "&name=" + name;
-    var url = "checkName.jsp?";
+    var url = "/studyting/register/check-name?";
+    var qry = "name=" + name;
 
     request.open("POST", url, true);
     request.onreadystatechange = NameupdatePage;
@@ -57,6 +67,8 @@ function checkName() {
 function NameupdatePage() {
     if (request.readyState == 4) {
         var check = request.responseText;
+
+        alert(check);
         if (check.includes("false")) {
             alert("이미 존재하는 닉네임 입니다.");
         }

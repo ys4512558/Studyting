@@ -14,7 +14,6 @@
     <meta charset="utf-8">
     <title>Register</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/Register.css">
     <link rel="stylesheet" href="<c:url value='/resources/css/Register.css'/> ">
     <script src="<c:url value='/resources/js/Register.js'/>"></script>
 </head>
@@ -30,12 +29,12 @@
 
                 <input type="text" class="v102_608" id="name" style="text-transform: lowercase;">
                 <span class="v102_609">닉네임</span>
-                <input type="button" class="v102_614" value="중복확인" onclick="checkName()">
+                <input type="button" class="v102_614" value="중복확인" id="checkNameBtn">
 
                 <input type="text" class="v102_555" id="id" style="text-transform: lowercase;">
                 <span class="v102_557">아이디</span>
 
-                <input type="button" class="v102_556" value="중복확인" onclick="checkID()">
+                <input type="button" class="v102_556" value="중복확인" id="checkIdBtn">
 
                 <input type="password" class="v102_559" id="pwd" style="text-transform: lowercase;">
                 <span class="v102_561">비밀번호</span>

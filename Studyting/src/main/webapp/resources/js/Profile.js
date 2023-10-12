@@ -48,7 +48,7 @@ function Input() {
     var name = document.getElementById("name").value;
 
     var qry = "name=" + name;
-    var url = "mypage.jsp?";
+    var url = "Profile.jsp?";
 
     request.open("POST", url, true);
     request.onreadystatechange = updatePage;

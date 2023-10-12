@@ -1,16 +1,10 @@
 window.onload = function () {
     var btn_Register = document.getElementById("btn_Register");
 
-    btn_Register.addEventListener("click", Register());
+    btn_Register.addEventListener("click", Register);
 }
 function Register() {
-    window.open("/register", "_self");
-}
-
-function Login() {
-    var id = document.getElementById("id");
-    var pwd = document.getElementById("pwd");
-    
+    window.open("/studyting/register", "_self");
 }
 
 

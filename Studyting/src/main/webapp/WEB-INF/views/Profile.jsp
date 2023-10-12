@@ -15,8 +15,8 @@
 
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<c:url value='/resources/css/mypage.css'/>">
-    <script src="<c:url value='/resources/js/mypage.js'/> "></script>
+    <link rel="stylesheet" href="<c:url value='/resources/css/Profile.css'/>">
+    <script src="<c:url value='/resources/js/Profile.js'/> "></script>
 
 </head>
 
@@ -51,6 +51,8 @@
         <input type="text" id="pr" class="e106_232_8" readonly>
         <img id="profil_img" class="e106_235">
         <input type="button" class="e106_235_1" onclick="reimg()" value="변경">
+
+
         <form id="img_file" action="ProfilUpload.jsp" method="post" enctype="multipart/form-data" target="blankifr">
             <input type="file" class="v102_612" name="uploadFile" id="uploadFile" hidden>
             <input type="submit" class="v102_611" value="이미지 등록" hidden>
