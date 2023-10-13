@@ -370,11 +370,11 @@ body {
 .v102_575 {
     color: rgba(255, 255, 255, 1);
     background-color: rgba(16.000000946223736, 125.00000014901161, 219.0000021457672, 1);
-    width: auto;
-    height: 5%;
+    width: 35%;
+    height: 100%;
     position: absolute;
-    left: 77.5%;
-    top: 93%;
+    left: 64%;
+    top: 150%;
     font-family: Open Sans;
     border: none;
     text-align: CENTER;

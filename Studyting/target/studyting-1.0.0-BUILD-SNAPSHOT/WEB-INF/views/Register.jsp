@@ -23,43 +23,40 @@
         <span class="v102_552">
 
         </span><span class="v106_253">StudyTing</span>
-        <span class="v102_613">
+        <form class="v102_613" action="/studyting/register/save" method="post">
                 <span class="v102_553"></span>
                 <span class="v102_554">회원가입</span>
 
-                <input type="text" class="v102_608" id="name" style="text-transform: lowercase;">
+                <input type="text" class="v102_608" id="name" name="name" style="text-transform: lowercase;">
                 <span class="v102_609">닉네임</span>
                 <input type="button" class="v102_614" value="중복확인" id="checkNameBtn">
 
-                <input type="text" class="v102_555" id="id" style="text-transform: lowercase;">
+                <input type="text" class="v102_555" id="id" name="id" style="text-transform: lowercase;">
                 <span class="v102_557">아이디</span>
 
                 <input type="button" class="v102_556" value="중복확인" id="checkIdBtn">
 
-                <input type="password" class="v102_559" id="pwd" style="text-transform: lowercase;">
+                <input type="password" class="v102_559" id="pwd" name="pwd" style="text-transform: lowercase;">
                 <span class="v102_561">비밀번호</span>
 
-                <input type="password" class="v102_563" id="pwdCheck" style="text-transform: lowercase;">
+                <input type="password" class="v102_563" id="pwdCheck" name="pwdCheck" style="text-transform: lowercase;">
                 <span class="v102_565">비밀번호 확인</span>
 
-                <input type="email" class="v102_567" id="email">
+                <input type="email" class="v102_567" id="email" name="email">
                 <span class="v102_569">이메일</span>
 
-                <input type="text" class="v102_571" id="pr">
+                <input type="text" class="v102_571" id="pr" name="pr">
                 <span class="v102_573">자기소개</span>
 
-                  <form id="img_file" action="ProfilUpload.jsp" method="post" enctype="multipart/form-data" target="blankifr">
+                 <form id="img_file" action="ProfilUpload.jsp" method="post" enctype="multipart/form-data" target="blankifr">
             		<input type="file" class="v102_612"  name="uploadFile" id="uploadFile">
 
                    <input  type="submit" class="v102_611" value="이미지 등록" hidden >
                    <span class="v102_610">프로필 이미지 설정</span>
                 </form>
-            <!--
-            <input type="text" class="v102_606" id="keyword">
-            <span class="v102_607">노출 키워드</span>-->
                 <span class = "v102_607"> 노출 키워드 </span>
                 <span class = "v102_615">
-                    <select class = "v102_607_1" id="keyword" name="keyword" onchange="SelectKeyword()">
+                    <select class = "v102_607_1" id="keyword" name="keyword">
                         <option value="">키워드 선택</option>
                         <option value="IT">IT</option>
                         <option value="웹프로그래밍">웹프로그래밍</option>
@@ -69,13 +66,14 @@
                         <option value="컴공">컴공</option>
                         <option value="C#">C#</option>
                     </select>
-                    <input type="text" class = "v102_607_2" id="input_keyword" placeholder="직접 입력" onkeyup="InputKeyword()">
-                    <input type="button" class = "v102_607_3" id="add_keyword" value="추가" onclick="addKeyword()">
+                    <input type="text" class = "v102_607_2" id="input_keyword" placeholder="직접 입력">
+                    <input type="button" class = "v102_607_3" id="add_keyword" value="추가">
                     <br> <br>
                     <span id="keywords"></span>
+                    <input type="hidden" name="keyword_txt" id="keyword_txt">
 				</span>
-                <input type="button" class="v102_575" value="회원가입" onclick="RegisterBtn()">
-        </span>
+            <input type="button" class="v102_575" value="회원가입">
+        </form>
     </span>
 </body>
 <iframe name='blankifr' style='display:none;'></iframe>

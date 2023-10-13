@@ -1,13 +1,30 @@
 
 window.onload = function () {
-    var check1 = "False";
-    var check2 = "False";
+    var check1 = false;
+    var check2 = false;
 
+    //중복체크
     var checkNameBtn = document.getElementById("checkNameBtn");
     var checkIdBtn = document.getElementById("checkIdBtn");
 
     checkNameBtn.addEventListener("click", checkName);
     checkIdBtn.addEventListener("click", checkID);
+
+    //키워드 드롭다운(select) 변경 발생 시 이벤트
+    var keyword = document.getElementById("keyword");
+    keyword.addEventListener("change", SelectKeyword);
+
+    //키워드 추가 시
+    //직접입력
+    var input_keyword = document.getElementById("input_keyword");
+    var add_keyword = document.getElementById("add_keyword");
+
+    input_keyword.addEventListener("keyup", InputKeyword);
+    add_keyword.addEventListener("click", addKeyword);
+
+    //회원가입 클릭 시 유효성 검사
+    var check_valid = document.getElementById("check_valid");
+    check_valid.addEventListener("click", RegisterBtn);
 }
 
 function createRequest() {
@@ -39,13 +56,12 @@ function checkID() {
 function IDupdatePage() {
     if (request.readyState == 4) {
         var check = request.responseText;
-        alert(check);
         if (check.includes("false")) {
             alert("이미 존재하는 아이디 입니다.");
         }
         else {
             alert("사용 가능한 아이디 입니다.");
-            check1 = "True"
+            check1 = true
         }
     }
 }
@@ -67,14 +83,12 @@ function checkName() {
 function NameupdatePage() {
     if (request.readyState == 4) {
         var check = request.responseText;
-
-        alert(check);
         if (check.includes("false")) {
             alert("이미 존재하는 닉네임 입니다.");
         }
         else {
             alert("사용 가능한 닉네임 입니다.");
-            check2 = "True"
+            check2 = true;
         }
     }
 }
@@ -91,34 +105,39 @@ function RegisterBtn() {
     var imgUrl = document.getElementById("uploadFile").value.split('\\').pop().toLowerCase();
 
     // 회원가입 예외처리 부분 //
-    if (RegisterCheck() == "False")
-        return;
+    if (!RegisterCheck())
+        return false;
+
     if (pwd != pwdCheck) {
         alert("비밀번호가 일치하지 않습니다.");
-        return;
+        return false;
     }
     if (email == "" || pr == "" || keyword == "" || pwd == "" || pwdCheck == "") {
         alert("빈칸을 모두 채워주세요");
-        return;
+        return false;
     }
-    // 회원가입 예외처리 부분 //
+    //ajax 지우고, form submit으로 변경
+    //submit false 확인
+    //jsp에서 select 여러개 어떻게 넘기는지 알아보기,
 
-    createRequest();
-    document.getElementById("img_file").submit();
-    var qry = "id=" + id + "&pwd=" + pwd + "&name=" + name
-        + "&email=" + email + "&keyword=" + keyword + "&pr=" + pr + "&imgUrl=" + imgUrl;
 
-    var url = "Register.jsp?";
 
-    request.open("POST", url, true);
-    request.onreadystatechange = movePage;
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", "charset=UTF-8");
-    request.send(qry);
+    // createRequest();
+    // document.getElementById("img_file").submit();
+    // var qry = "id=" + id + "&pwd=" + pwd + "&name=" + name
+    //     + "&email=" + email + "&keyword=" + keyword + "&pr=" + pr + "&imgUrl=" + imgUrl;
+    //
+    // var url = "Register.jsp?";
+    //
+    // request.open("POST", url, true);
+    // request.onreadystatechange = movePage;
+    // request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", "charset=UTF-8");
+    // request.send(qry);
 }
 function RegisterCheck() {
-    if (check1 == "False" || check2 == "False") {
+    if (!check1 || !check2) {
         alert("아이디 또는 닉네임 중복확인 바랍니다.");
-        return "False";
+        return false;
     }
 }
 function movePage() {
@@ -175,10 +194,6 @@ function SelectKeyword() {
                 check = false;
                 break;
             }
-            /*if (selectValue.includes(parent.childNodes[i].innerText)) {
-                check = false;
-                break;
-            }*/
         }
         if (check) {
             parent.appendChild(keyword);
@@ -208,6 +223,8 @@ function addKeyword() {
         var keyword = document.createElement("span");
         var key = document.createElement("span");
         var remove = document.createElement("input");
+        //form 전송 시 사용할 hidden태그
+        var keyword_txt = document.getElementById("keyword_txt");
 
         remove.setAttribute("type", "button");
         remove.setAttribute("value", "X");
@@ -240,6 +257,7 @@ function addKeyword() {
             }
         }
         else {
+            keyword_txt.innerHTML = Keyword_Return();
             parent.appendChild(keyword);
         }
         input_keyword.value = "";
